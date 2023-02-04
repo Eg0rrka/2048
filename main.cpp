@@ -4,15 +4,10 @@
 
 using namespace std;
 
-//void trans(int mat[4][4]);
-
-//int up(int crr[4][4], int m);
 
 int left(int brr[], int n);
 
 int right(int brr[], int n);
-
-//int down(int crr[4][4], int m);
 
 int new_number();
 
@@ -24,40 +19,6 @@ int new_number() {
     }
     return nov;
 }
-
-
-/*void trans(int mat[4][4]) {
-    int t;
-    for (int i = 0; i < 4; ++i) {
-        for (int j = i; j < 4; ++j) {
-            t = mat[i][j];
-            mat[i][j] = mat[j][i];
-            mat[j][i] = t;
-        }
-    }
-}*/
-
-
-/*int up(int crr[][], int m, int n) {
-    trans(crr);
-    left(crr[0], m);
-    left(crr[1], m);
-    left(crr[2], m);
-    left(crr[3], m);
-    trans(crr);
-    return crr[][];
-}*/
-
-
-/*int down(int crr[4][4], int m) {
-    trans(crr);
-    right(crr[0], m);
-    right(crr[1], m);
-    right(crr[2], m);
-    right(crr[3], m);
-    trans(crr);
-    return crr[4][4];
-}*/
 
 
 int left(int arr[], int n) {
@@ -128,144 +89,6 @@ int right(int arr[], int n) {
 }
 
 
-/*int left(int brr[], int n) {
-    if (brr[n - 4] == 0 && brr[n - 2] == 0 && brr[n - 3] == 0) {
-        brr[n - 4] = brr[n - 1];
-        brr[n - 1] = 0;
-    }
-    if (brr[n - 3] == brr[n - 4]) {
-        brr[n - 4] = brr[n - 3] + brr[n - 4];
-        brr[n - 3] = 0;
-        brr[n - 3] = brr[n - 2];
-        brr[n - 2] = brr[n - 1];
-        brr[n - 1] = 0;
-    }
-    if (brr[n - 2] == brr[n - 3]) {
-        brr[n - 3] = brr[n - 2] + brr[n - 3];
-        brr[n - 2] = 0;
-        brr[n - 2] = brr[n - 1];
-        brr[n - 1] = 0;
-        if (brr[n - 4] == 0) {
-            brr[n - 4] = brr[n - 3];
-            brr[n - 3] = brr[n - 2];
-            brr[n - 2] = brr[n - 1];
-            brr[n - 1] = 0;
-        }
-    }
-    if (brr[n - 1] == brr[n - 2]) {
-        brr[n - 2] = brr[n - 1] + brr[n - 2];
-        brr[n - 1] = 0;
-        if (brr[n - 3] == 0) {
-            brr[n - 3] = brr[n - 2];
-            brr[n - 2] = 0;
-        }
-    }
-    if (brr[n - 1] == brr[n - 3] && brr[n - 2] == 0) {
-        brr[n - 3] = brr[n - 3] + brr[n - 1];
-        brr[n - 1] = 0;
-        if (brr[n - 4] == 0) {
-            brr[n - 4] = brr[n - 3];
-            brr[n - 3] = 0;
-        }
-    }
-    if (brr[n - 1] == brr[n - 4] && brr[n - 2] == 0 && brr[n - 3] == 0) {
-        brr[n - 4] = brr[n - 4] + brr[n - 1];
-        brr[n - 1] = 0;
-    }
-    if (brr[n - 2] == brr[n - 4] && brr[n - 3] == 0) {
-        brr[n - 4] = brr[n - 4] + brr[n - 2];
-        brr[n - 2] = 0;
-        brr[n - 3] = brr[n - 1];
-        brr[n - 1] = 0;
-    }
-    if (brr[n - 4] == 0) {
-        brr[n - 4] = brr[n - 3];
-        brr[n - 3] = brr[n - 2];
-        brr[n - 2] = brr[n - 1];
-        brr[n - 1] = 0;
-    }
-    if (brr[n - 3] == 0) {
-        brr[n - 3] = brr[n - 2];
-        brr[n - 2] = brr[n - 1];
-        brr[n - 1] = 0;
-    }
-    if (brr[n - 2] == 0) {
-        brr[n - 2] = brr[n - 1];
-        brr[n - 1] = 0;
-    }
-    return 0;
-}*/
-
-
-/*int right(int brr[], int n) {
-    if (brr[n - 1] == 0 && brr[n - 2] == 0 && brr[n - 3] == 0) {
-        brr[n - 1] = brr[n - 4];
-        brr[n - 4] = 0;
-    }
-    if (brr[n - 2] == brr[n - 1]) {
-        brr[n - 1] = brr[n - 2] + brr[n - 1];
-        brr[n - 2] = 0;
-        brr[n - 2] = brr[n - 3];
-        brr[n - 3] = brr[n - 4];
-        brr[n - 4] = 0;
-    }                                                                          //brr[n-2]==brr[n-3]
-    if (brr[n - 3] == brr[n - 2]) {                                            //brr[n-3]==brr[n-2]
-        brr[n - 2] = brr[n - 3] + brr[n - 2];                                  //brr[n-1]==brr[n-4]
-        brr[n - 3] = 0;                                                        //brr[n-4]==brr[n-1]
-        brr[n - 3] = brr[n - 4];
-        brr[n - 4] = 0;
-        if (brr[n - 1] == 0) {
-            brr[n - 1] = brr[n - 2];
-            brr[n - 2] = brr[n - 3];
-            brr[n - 3] = brr[n - 4];
-            brr[n - 4] = 0;
-        }
-    }
-    if (brr[n - 4] == brr[n - 3]) {
-        brr[n - 3] = brr[n - 4] + brr[n - 3];
-        brr[n - 4] = 0;
-        if (brr[n - 2] == 0) {
-            brr[n - 2] = brr[n - 3];
-            brr[n - 3] = 0;
-        }
-    }
-    if (brr[n - 4] == brr[n - 2] && brr[n - 3] == 0) {     //brr[n-2]==brr[n-3]
-        brr[n - 2] = brr[n - 2] + brr[n - 4];              //brr[n-3]==brr[n-2]
-        brr[n - 4] = 0;                                    //brr[n-1]==brr[n-4]
-        if (brr[n - 1] == 0) {                             //brr[n-4]==brr[n-1]
-            brr[n - 1] = brr[n - 2];
-            brr[n - 2] = 0;
-        }
-    }
-    if (brr[n - 4] == brr[n - 1] && brr[n - 3] == 0 && brr[n - 2] == 0) {
-        brr[n - 1] = brr[n - 1] + brr[n - 4];
-        brr[n - 4] = 0;
-    }
-    if (brr[n - 3] == brr[n - 1] && brr[n - 2] == 0) {
-        brr[n - 1] = brr[n - 1] + brr[n - 3];
-        brr[n - 3] = 0;
-        brr[n - 2] = brr[n - 4];
-        brr[n - 4] = 0;
-    }
-    if (brr[n - 1] == 0) {
-        brr[n - 1] = brr[n - 2];
-        brr[n - 2] = brr[n - 3];
-        brr[n - 3] = brr[n - 4];
-        brr[n - 4] = 0;
-    }
-    if (brr[n - 2] == 0) {
-        brr[n - 2] = brr[n - 3];
-        brr[n - 3] = brr[n - 4];
-        brr[n - 4] = 0;
-    }
-    if (brr[n - 3] == 0) {
-        brr[n - 3] = brr[n - 4];
-        brr[n - 4] = 0;
-    }
-    return 0;
-}*/
-
-
 int main() {
     srand(time(NULL));
     int n, m;
@@ -279,6 +102,7 @@ int main() {
     int kostil = -1;
     int u = 1;
     string action;
+    int crr[m][n];
     int arr[n][m];
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < m; ++j) {
@@ -333,48 +157,40 @@ int main() {
         }
         if (action == "up") {
             for (int i = 0; i < n; ++i) {
-                for (int j = i; j < m; ++j) {
-                    t = arr[i][j];
-                    arr[i][j] = arr[j][i];
-                    arr[j][i] = t;
+                for (int j = 0; j < m; ++j) {
+                    crr[j][i] = arr[i][j];
                 }
             }
-            for (int i = 0; i < n; i++) {
-                left(arr[i], m);
+            for (int i = 0; i < m; i++) {
+                left(crr[i], n);
             }
-            for (int i = 0; i < n; ++i) {
-                for (int j = i; j < m; ++j) {
-                    t = arr[i][j];
-                    arr[i][j] = arr[j][i];
-                    arr[j][i] = t;
+            for (int i = 0; i < m; ++i) {
+                for (int j = 0; j < n; ++j) {
+                    arr[j][i] = crr[i][j];
                 }
             }
         }
         if (action == "right") {
+            t = 0;
             for (int i = 0; i < n; i++) {
                 right(arr[i], m);
             }
         }
         if (action == "down") {
             for (int i = 0; i < n; ++i) {
-                for (int j = i; j < m; ++j) {
-                    t = arr[i][j];
-                    arr[i][j] = arr[j][i];
-                    arr[j][i] = t;
+                for (int j = 0; j < m; ++j) {
+                    crr[j][i] = arr[i][j];
                 }
             }
             for (int i = 0; i < n; i++) {
-                right(arr[i], m);
+                right(crr[i], m);
             }
-            for (int i = 0; i < n; ++i) {
-                for (int j = i; j < m; ++j) {
-                    t = arr[i][j];
-                    arr[i][j] = arr[j][i];
-                    arr[j][i] = t;
+            for (int i = 0; i < m; ++i) {
+                for (int j = 0; j < n; ++j) {
+                    arr[j][i] = crr[i][j];
                 }
             }
         }
-        //max=2048;
         u = 0;
         for (int i = 0; i < n; ++i) {
             for (int j = 0; j < m; ++j) {
